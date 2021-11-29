@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import styles from './styles';
 import MyStatusBar from 'components/Header/statusBar';
 import {appImages, colors, appStrings} from 'utils';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Splash = ({navigation}) => {
   useEffect(() => {

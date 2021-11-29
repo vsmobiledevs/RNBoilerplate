@@ -28,13 +28,17 @@ export const Header = ({
   h3fonstSize,
   h3fontFamily,
   rightBtnHeight = 44,
-  rowReverse
+  rowReverse,
 }) => {
   return (
     <>
       <MyStatusBar backgroundColor={colors.bg2} barStyle={'dark-content'} />
       <View style={styles.container}>
-        <View style={[styles.wrapper,{flexDirection:rowReverse?'row-reverse':'row'}]}>
+        <View
+          style={[
+            styles.wrapper,
+            {flexDirection: rowReverse ? 'row-reverse' : 'row'},
+          ]}>
           <View style={styles.contentContainer}>
             {backButton ? (
               <TouchableOpacity
@@ -126,7 +130,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bg2,
     paddingHorizontal: WP('5'),
     paddingVertical: 5,
-  
   },
   wrapper: {
     flexDirection: 'row',
@@ -136,22 +139,18 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: 'center',
     flexDirection: 'row',
-
   },
   headerContainer: {
     paddingRight: 10,
   },
-  header: {
-
-
-    },
+  header: {},
   imageStyle: {
     height: 19,
     width: 12,
     resizeMode: 'contain',
   },
   heading2: {
-    fontSize: size.h6,
+    // fontSize: size.h6,
     color: colors.b1,
     fontFamily: family.Poppins_Bold,
   },
@@ -164,7 +163,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btnText: {
-    fontSize: size.small,
     fontFamily: family.Poppins_Bold,
     color: colors.white,
   },
