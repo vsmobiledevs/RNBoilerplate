@@ -23,4 +23,10 @@ export {baseURL, AUTH_CONST, NEW_AUTH_CONST} from './routes';
 // } from './validations';
 
 export const paginationLimit = 10;
-export {languageSelector, checkConnected} from './helpers';
+export {
+  languageSelector,
+  checkConnected,
+  OnlineStatusProvider,
+  useOnlineStatus,
+  timeout,
+} from './helpers';

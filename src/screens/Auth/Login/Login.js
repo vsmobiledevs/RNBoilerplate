@@ -10,23 +10,12 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import NetInfo from '@react-native-community/netinfo';
 import {NetInfoModal} from 'components';
+import {useOnlineStatus} from 'utils';
 const Login = () => {
   const [isLoading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
-  const [isOffline, setOfflineStatus] = useState(false);
-
-  useEffect(() => {
-    const removeNetInfoSubscription = NetInfo.addEventListener(state => {
-      const offline = !(state.isConnected && state.isInternetReachable);
-      setOfflineStatus(offline);
-    });
-
-    fetchUsers();
-
-    return () => removeNetInfoSubscription();
-  }, []);
+  const isOnline = useOnlineStatus();
   const User = ({name, email, avatar}) => (
     <View style={styles.user}>
       <Image source={{uri: avatar}} style={styles.avatar} />
@@ -36,7 +25,9 @@ const Login = () => {
       </View>
     </View>
   );
-
+  useEffect(() => {
+    fetchUsers();
+  }, []);
   const fetchUsers = useCallback(() => {
     setLoading(true);
     axios
@@ -44,12 +35,11 @@ const Login = () => {
       .then(({data}) => {
         const {results} = data;
         setUsers(results);
-        isOffline && setOfflineStatus(false);
       })
       .finally(() => {
         setLoading(false);
       });
-  }, [isOffline]);
+  }, [isOnline]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -67,7 +57,7 @@ const Login = () => {
         keyExtractor={user => user.login.uuid}
       />
       <NetInfoModal
-        show={isOffline}
+        show={isOnline}
         onRetry={fetchUsers}
         isRetrying={isLoading}
       />
