@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, ActivityIndicator} from 'react-native';
 import {colors} from 'utils';
+import PropTypes from 'prop-types';
 
 export const Loading = ({visible}) => (
   <ActivityIndicator
@@ -10,7 +11,9 @@ export const Loading = ({visible}) => (
     size="large"
   />
 );
-
+Loading.propTypes = {
+  loader_color: PropTypes.bool,
+};
 const loader = StyleSheet.create({
   centering: {
     flex: 1,

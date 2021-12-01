@@ -25,7 +25,6 @@ export const checkConnected = () => {
 const OnlineStatusContext = createContext(true);
 export const OnlineStatusProvider = ({children}) => {
   const [isOffline, setOfflineStatus] = useState(false);
-
   useEffect(() => {
     const removeNetInfoSubscription = NetInfo.addEventListener(state => {
       const offline = !(state.isConnected && state.isInternetReachable);

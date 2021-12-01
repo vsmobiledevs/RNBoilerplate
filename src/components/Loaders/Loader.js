@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SkypeIndicator} from 'react-native-indicators';
 import {colors} from 'utils';
+import PropTypes from 'prop-types';
 
 export const Loader = ({loader_color}) => {
   return (
@@ -12,6 +13,10 @@ export const Loader = ({loader_color}) => {
       />
     </View>
   );
+};
+//Prop Types
+Loader.propTypes = {
+  loader_color: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
