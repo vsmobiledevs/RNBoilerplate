@@ -25,7 +25,6 @@ export {baseURL, AUTH_CONST, NEW_AUTH_CONST} from './routes';
 export const paginationLimit = 10;
 export {
   languageSelector,
-  checkConnected,
   OnlineStatusProvider,
   useOnlineStatus,
   timeout,

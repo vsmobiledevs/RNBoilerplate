@@ -17,11 +17,6 @@ export const languageSelector = (lang, defaultLang) => {
   }
 };
 
-export const checkConnected = () => {
-  return NetInfo.fetch().then(state => {
-    return state.isConnected;
-  });
-};
 const OnlineStatusContext = createContext(true);
 export const OnlineStatusProvider = ({children}) => {
   const [isOffline, setOfflineStatus] = useState(false);
