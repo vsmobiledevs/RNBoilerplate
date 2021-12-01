@@ -7,8 +7,8 @@ import {
   I18nManager,
   TouchableOpacity,
 } from 'react-native';
-import {appIcons} from '../../assets';
-import {WP, colors, size, family} from '../../utils';
+import {appIcons} from 'assets';
+import {WP, colors, size, family} from 'utils';
 import MyStatusBar from './statusBar';
 
 export const Header = ({

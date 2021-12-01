@@ -1,7 +1,7 @@
 import React from 'react';
 import {I18nManager} from 'react-native';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {colors, family} from '../../utils';
+import {colors, family} from 'utils';
 
 export const BlankCard = ({title, btnText, showBtn, onPress}) => {
   return (
@@ -34,7 +34,7 @@ const style = StyleSheet.create({
     fontSize: 20,
     color: colors.b1,
     fontFamily: family.Poppins_Medium,
-    textAlign:'center'
+    textAlign: 'center',
   },
   textContainer: {
     justifyContent: 'center',

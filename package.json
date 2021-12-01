@@ -21,6 +21,8 @@
     "react-native-actions-sheet": "^0.5.8",
     "react-native-fast-image": "^8.5.11",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-indicators": "^0.17.0",
+    "react-native-modal": "^13.0.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
     "react-redux": "^7.2.6",

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SkypeIndicator} from 'react-native-indicators';
-import {colors} from '../../utils';
+import {colors} from 'utils';
 
 export const Loader = ({loader_color}) => {
   return (
