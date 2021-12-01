@@ -9,6 +9,7 @@ import {
   Dimensions,
   SafeAreaView,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 import {NetInfoModal} from 'components';
 import {useOnlineStatus} from 'utils';
@@ -56,6 +57,8 @@ const Login = () => {
         )}
         keyExtractor={user => user.login.uuid}
       />
+      {/* <Button title={'Get Data'} onPress={fetchUsers} /> */}
+
       <NetInfoModal
         show={isOnline}
         onRetry={fetchUsers}
